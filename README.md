@@ -98,7 +98,7 @@ Requests/sec: 200481.39
 Transfer/sec:     29.64MB
 ```
 
-<a href="go-fast"></a>
+<a name="go-fast"></a>
 ### [Go-Fast-HTTP](https://github.com/valyala/fasthttp)
 
 ```
@@ -118,7 +118,7 @@ Requests/sec: 1888432.99
 Transfer/sec:    226.92MB
 ```
 
-<a href="go"></a>
+<a name="go"></a>
 ### [Go-http](https://golang.org/pkg/net/http/)
 
 ```
@@ -138,7 +138,7 @@ Requests/sec: 241484.14
 Transfer/sec:     29.71MB
 ```
 
-<a href="iris"></a>
+<a name="iris"></a>
 ### [Iris (go)](http://iris-go.com/)
 
 ```
@@ -198,7 +198,7 @@ Requests/sec: 140645.13
 Transfer/sec:     20.25MB
 ```
 
-<a href="light-java"></a>
+<a name="light-java"></a>
 ### [light-java](https://networknt.github.io/light-java/)
 
 ```
@@ -218,7 +218,7 @@ Requests/sec: 1678297.39
 Transfer/sec:    169.66MB
 ```
 
-<a href="msf4j"></a>
+<a name="msf4j"></a>
 ### [msf4j](http://wso2.com/products/microservices-framework-for-java/)
 
 ```
@@ -253,7 +253,7 @@ java.lang.NullPointerException
 
 While using `ab` to test with `-c` argument, it will halt. Looks like the server failed to release connection
 
-<a href="ninja"></a>
+<a name="ninja"></a>
 ### [Ninjaframework](http://www.ninjaframework.org/)
 
 ```
@@ -374,7 +374,7 @@ Transfer/sec:     20.98MB
 ```
 
 
-<a name="spark></a>
+<a name="spark"></a>
 ### [Sparkframework](http://sparkjava.com/)
 
 ```
