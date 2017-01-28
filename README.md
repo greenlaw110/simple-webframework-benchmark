@@ -49,6 +49,12 @@ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
 
 The port `8080` might be different as per project setting. Please read the `README.md` file inside each project to check the exact port number.
 
+## What are we benchmarking
+
+This is a simple webframework benchmark. All framework testbed accept HTTP GET request to `/` and respond with text `Hello World!`.
+
+For comprehensive webframework benchmark, one should refer to https://www.techempower.com/benchmarks/
+
 
 ## Benchmark details
 
