@@ -1,4 +1,10 @@
 
+# Simple Web Framework Benchmark
+
+**Disclaim** This project is copied and adapted from https://github.com/networknt/light-java-example/tree/master/performance
+
+Benchmark result:
+
 | Framework    | Max Throughput | Avg Latency | Transfer | 
 | ------------ | -------------: | ----------: | -------: |
 | Go-Fast-HTTP | 1888432.99     | 0.94ms      | 226.92MB |
@@ -24,11 +30,17 @@
 | Node-express   | 47429.61 | 23.26ms | 10.40MB |
 | msf4j          | fail     | fail    | fail    |
 
-We are using pipeline.lua to generate more requests per second and the pipeline.lua is located
-at light-java-example/performance/pipeline.lua.
+**Note** the benchmark is tested on my local laptop with the following configuration:
+
+* toshiba i7-4700MQ 16G RAM SSD
+* Linuxmint 18.1
+* Open JDK 1.8.0_121
+* go 1.6.2 linux/amd64
+
+We are using <a href="pipeline.lua"><code>pipeline.lua</code></a> to generate more requests per second
 
 
-### light-java
+### [light-java](https://networknt.github.io/light-java/)
 
 ```
 Hello World!luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -47,7 +59,7 @@ Requests/sec: 1678297.39
 Transfer/sec:    169.66MB
 ```
 
-### ActFramework
+### [ActFramework](http://actframework.org)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:5460 -s pipeline.lua --latency -- / 16
@@ -122,7 +134,7 @@ Requests/sec: 384186.78
 Transfer/sec:     28.21MB
 ```
 
-### WildFly Swarm
+### [WildFly Swarm](http://wildfly-swarm.io/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -141,7 +153,7 @@ Requests/sec:  58179.11
 Transfer/sec:      7.66MB
 ```
 
-### Sparkframework
+### [Sparkframework](http://sparkjava.com/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:4567 -s pipeline.lua --latency -- / 16
@@ -160,7 +172,7 @@ Requests/sec: 291954.47
 Transfer/sec:     49.28MB
 ```
 
-### Jooby
+### [Jooby](http://jooby.org/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -179,7 +191,7 @@ Requests/sec: 140645.13
 Transfer/sec:     20.25MB
 ```
 
-### Play-Java
+### [Play-Java](http://playframework.com)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -198,7 +210,7 @@ Requests/sec: 218074.28
 Transfer/sec:     26.83MB
 ```
 
-### Ninjaframework
+### [Ninjaframework](http://www.ninjaframework.org/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -217,7 +229,7 @@ Requests/sec:  51948.21
 Transfer/sec:     14.81MB
 ```
 
-### Playframework v1.4.x
+### [Playframework v1.4.x](http://playframework.com)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:9000 -s pipeline.lua --latency -- / 16
@@ -236,7 +248,7 @@ Requests/sec:  50176.54
 Transfer/sec:     21.44MB
 ```
 
-### JFinal 3.0
+### [JFinal 3.0](http://www.jfinal.com/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -255,7 +267,7 @@ Requests/sec: 229960.41
 Transfer/sec:     49.12MB
 ```
 
-### AKKA-HTTP
+### [AKKA-HTTP]http://doc.akka.io/docs/akka-stream-and-http-experimental/1.0-M2/scala/http/()
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -274,7 +286,7 @@ Requests/sec: 200481.39
 Transfer/sec:     29.64MB
 ```
 
-### node-express
+### [node-express](http://expressjs.com/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -293,7 +305,7 @@ Requests/sec:  47429.61
 Transfer/sec:     10.40MB
 ```
 
-### RatPack
+### [RatPack](https://ratpack.io/)
 
 ```
 Hello World!luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:5050 -s pipeline.lua --latency -- / 16
@@ -312,7 +324,7 @@ Requests/sec: 241775.80
 Transfer/sec:     20.98MB
 ```
 
-### Payra-Micro
+### [Payra-Micro](http://www.payara.fish/payara_micro)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -331,7 +343,7 @@ Requests/sec:  61703.99
 Transfer/sec:      8.71MB
 ```
 
-### msf4j
+### [msf4j](http://wso2.com/products/microservices-framework-for-java/)
 
 ```
 luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -365,7 +377,7 @@ java.lang.NullPointerException
 
 While using `ab` to test with `-c` argument, it will halt. Looks like the server failed to release connection
 
-### iris (go)
+### [iris (go])(http://iris-go.com/)
 
 ```
 wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -384,7 +396,7 @@ Requests/sec: 169879.19
 Transfer/sec:     20.90MB
 ```
 
-### Go-http 
+### [Go-http](https://golang.org/pkg/net/http/)
 
 ```
 wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
@@ -403,7 +415,7 @@ Requests/sec: 241484.14
 Transfer/sec:     29.71MB
 ```
 
-### Go-Fast-HTTP
+### [Go-Fast-HTTP](https://github.com/valyala/fasthttp)
 
 ```
 wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
