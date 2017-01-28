@@ -20,9 +20,9 @@
 | [Iris (Go)](#iris)    | 169879.19      |  11.25ms    | 20.90MB  |
 | [Jooby/Undertow](#jooby) | 140645.13      |  15.91ms  | 20.25MB |
 | [Spring Boot Undertow](#spring-undertow) | 89433.13 | 18.88ms   | 12.96MB |
-| [Dropwizard](#dropwizard)     | 79057.30     | 60.37ms     | 7.54MB  |
+| [Bootique + Jetty/Jersey](#jersey) | 82373.78 | 50.39ms | 14.14MB |
+| [Dropwizard](#dropwizard)     | 78079.06     | 57.73ms     | 7.45MB  |
 | [Spring Boot Tomcat](#spring-tomcat) | 68554.49 | 42.84ms     | 8.25MB   |
-| [Bootique + Jetty/Jersey](#jersey) | 65072.20 | 39.08ms | 11.17MB |
 | [Payra-Micro](#payra)    | 61703.99 | 63.32ms | 8.71MB |
 | [WildFly Swarm](#swarm)  | 58179.11 | 20.08ms | 7.66MB   |
 | [Ninjaframework](#ninja) | 51948.21 | 27.55ms | 14.81MB |
@@ -96,6 +96,46 @@ Running 30s test @ http://localhost:8080
   6034389 requests in 30.10s, 0.87GB read
 Requests/sec: 200481.39
 Transfer/sec:     29.64MB
+```
+
+<a name="bootique"></a>
+### Bootique + Jetty/Jersey
+
+```
+luog@luog-Satellite-P50-A:~/p/greenlaw110/webframework-benchmark$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
+Running 30s test @ http://localhost:8080
+  4 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.39ms   61.17ms 730.72ms   85.85%
+    Req/Sec    20.72k     3.54k   38.29k    71.48%
+  Latency Distribution
+     50%   25.08ms
+     75%   69.40ms
+     90%  136.04ms
+     99%  273.06ms
+  2476508 requests in 30.06s, 425.12MB read
+Requests/sec:  82373.78
+Transfer/sec:     14.14MB
+```
+
+<a name="dropwizard"></a>
+### Dropwizard
+
+```
+luog@luog-Satellite-P50-A:~/p/greenlaw110/webframework-benchmark$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
+Running 30s test @ http://localhost:8080
+  4 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    57.73ms   73.40ms 737.18ms   85.68%
+    Req/Sec    19.64k     4.22k   42.51k    71.30%
+  Latency Distribution
+     50%   25.43ms
+     75%   79.71ms
+     90%  162.27ms
+     99%  321.80ms
+  2350101 requests in 30.10s, 224.12MB read
+Requests/sec:  78079.06
+Transfer/sec:      7.45MB
 ```
 
 <a name="go-fast"></a>
@@ -293,7 +333,7 @@ Requests/sec:  47429.61
 Transfer/sec:     10.40MB
 ```
 
-<a name="payra></a>
+<a name="payra"></a>
 ### [Payra-Micro](http://www.payara.fish/payara_micro)
 
 ```
