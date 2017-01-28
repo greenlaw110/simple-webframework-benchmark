@@ -377,7 +377,7 @@ java.lang.NullPointerException
 
 While using `ab` to test with `-c` argument, it will halt. Looks like the server failed to release connection
 
-### [iris (go])(http://iris-go.com/)
+### [iris (go)](http://iris-go.com/)
 
 ```
 wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
