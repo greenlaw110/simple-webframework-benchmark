@@ -7,28 +7,28 @@
 
 | Framework    | Max Throughput | Avg Latency | Transfer | 
 | ------------ | -------------: | ----------: | -------: |
-| Go-Fast-HTTP | 1888432.99     | 0.94ms      | 226.92MB |
-| Light Java   | 1678297.39     | 1.94ms      | 169.66MB |
-| Spring Boot Reactor | 384186.78 | 4.17ms    | 28.21MB  |
-| ActFramework | 352478.93      | 5.94ms      | 51.09MB  |
-| Spark        | 291954.47      |  11.14ms    | 49.28MB  |
-| RatPack      | 241775.80      |   8.44ms    | 20.87MB  |
-| Go-HTTP      | 241484.14      |   7.02ms    | 29.71MB  |
-| JFinal 3     | 229960.41      |   8.93ms    | 49.12MB  |
-| Play-Java    | 218074.28      |  13.80ms    | 26.83MB  |
-| AKKA-HTTP    | 200481.39      |  26.26ms    | 29.64MB  |
-| Iris (Go)    | 169879.19      |  11.25ms    | 20.90MB  |
-| Jooby/Undertow | 140645.13      |  15.91ms  | 20.25MB |
-| Spring Boot Undertow | 89433.13 | 18.88ms   | 12.96MB |
-| Dropwizard     | 79057.30     | 60.37ms     | 7.54MB  |
-| Spring Boot Tomcat | 68554.49 | 42.84ms     | 8.25MB   |
-| Bootique + Jetty/Jersey | 65072.20 | 39.08ms | 11.17MB |
-| Payra-Micro    | 61703.99 | 63.32ms | 8.71MB |
-| WildFly Swarm  | 58179.11 | 20.08ms | 7.66MB   |
-| Ninjaframework | 51948.21 | 27.55ms | 14.81MB |
-| Play-1         | 50176.54 | 22.42ms | 21.44MB |
-| Node-express   | 47429.61 | 23.26ms | 10.40MB |
-| msf4j          | fail     | fail    | fail    |
+| [Go-Fast-HTTP](#go-fast) | 1888432.99     | 0.94ms      | 226.92MB |
+| [Light Java](#light-java)   | 1678297.39     | 1.94ms      | 169.66MB |
+| [Spring Boot Reactor](#spring-reactor) | 384186.78 | 4.17ms    | 28.21MB  |
+| [ActFramework](#act) | 352478.93      | 5.94ms      | 51.09MB  |
+| [Spark](#spark)        | 291954.47      |  11.14ms    | 49.28MB  |
+| [RatPack](#ratpack)      | 241775.80      |   8.44ms    | 20.87MB  |
+| [Go-HTTP](#go)      | 241484.14      |   7.02ms    | 29.71MB  |
+| [JFinal 3](#jfinal)     | 229960.41      |   8.93ms    | 49.12MB  |
+| [Play-Java](#play-java)    | 218074.28      |  13.80ms    | 26.83MB  |
+| [AKKA-HTTP](#akka)    | 200481.39      |  26.26ms    | 29.64MB  |
+| [Iris (Go)](#iris)    | 169879.19      |  11.25ms    | 20.90MB  |
+| [Jooby/Undertow](#jooby) | 140645.13      |  15.91ms  | 20.25MB |
+| [Spring Boot Undertow](#spring-undertow) | 89433.13 | 18.88ms   | 12.96MB |
+| [Dropwizard](#dropwizard)     | 79057.30     | 60.37ms     | 7.54MB  |
+| [Spring Boot Tomcat](#spring-tomcat) | 68554.49 | 42.84ms     | 8.25MB   |
+| [Bootique + Jetty/Jersey](#jersey) | 65072.20 | 39.08ms | 11.17MB |
+| [Payra-Micro](#payra)    | 61703.99 | 63.32ms | 8.71MB |
+| [WildFly Swarm](#swarm)  | 58179.11 | 20.08ms | 7.66MB   |
+| [Ninjaframework](#ninja) | 51948.21 | 27.55ms | 14.81MB |
+| [Play-1](#play-1)         | 50176.54 | 22.42ms | 21.44MB |
+| [Node-express](#node)   | 47429.61 | 23.26ms | 10.40MB |
+| [msf4j](#msf4j)          | fail     | fail    | fail    |
 
 ## Benchmark environment and process
 
@@ -58,6 +58,7 @@ For comprehensive webframework benchmark, one should refer to https://www.techem
 
 ## Benchmark details
 
+<a name="act"></a>
 ### [ActFramework](http://actframework.org)
 
 ```
@@ -77,25 +78,7 @@ Requests/sec: 352478.93
 Transfer/sec:     51.09MB
 ```
 
-### [Ninjaframework](http://www.ninjaframework.org/)
-
-```
-luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
-Running 30s test @ http://localhost:8080
-  4 threads and 128 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    27.55ms   18.56ms 169.72ms   66.95%
-    Req/Sec    13.08k     1.13k   40.77k    85.26%
-  Latency Distribution
-     50%   24.11ms
-     75%   39.00ms
-     90%   53.58ms
-     99%   80.25ms
-  1563624 requests in 30.10s, 445.87MB read
-Requests/sec:  51948.21
-Transfer/sec:     14.81MB
-```
-
+<a name="akka"></a>
 ### [AKKA-HTTP](http://doc.akka.io/docs/akka-stream-and-http-experimental/1.0-M2/scala/http/)
 
 ```
@@ -115,7 +98,7 @@ Requests/sec: 200481.39
 Transfer/sec:     29.64MB
 ```
 
-
+<a href="go-fast"></a>
 ### [Go-Fast-HTTP](https://github.com/valyala/fasthttp)
 
 ```
@@ -135,6 +118,7 @@ Requests/sec: 1888432.99
 Transfer/sec:    226.92MB
 ```
 
+<a href="go"></a>
 ### [Go-http](https://golang.org/pkg/net/http/)
 
 ```
@@ -154,6 +138,7 @@ Requests/sec: 241484.14
 Transfer/sec:     29.71MB
 ```
 
+<a href="iris"></a>
 ### [Iris (go)](http://iris-go.com/)
 
 ```
@@ -173,6 +158,7 @@ Requests/sec: 169879.19
 Transfer/sec:     20.90MB
 ```
 
+<a name="jfinal"></a>
 ### [JFinal 3.0](http://www.jfinal.com/)
 
 ```
@@ -192,6 +178,7 @@ Requests/sec: 229960.41
 Transfer/sec:     49.12MB
 ```
 
+<a name="jooby"></a>
 ### [Jooby](http://jooby.org/)
 
 ```
@@ -211,6 +198,7 @@ Requests/sec: 140645.13
 Transfer/sec:     20.25MB
 ```
 
+<a href="light-java"></a>
 ### [light-java](https://networknt.github.io/light-java/)
 
 ```
@@ -230,6 +218,7 @@ Requests/sec: 1678297.39
 Transfer/sec:    169.66MB
 ```
 
+<a href="msf4j"></a>
 ### [msf4j](http://wso2.com/products/microservices-framework-for-java/)
 
 ```
@@ -264,7 +253,27 @@ java.lang.NullPointerException
 
 While using `ab` to test with `-c` argument, it will halt. Looks like the server failed to release connection
 
+<a href="ninja"></a>
+### [Ninjaframework](http://www.ninjaframework.org/)
 
+```
+luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:8080 -s pipeline.lua --latency -- / 16
+Running 30s test @ http://localhost:8080
+  4 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.55ms   18.56ms 169.72ms   66.95%
+    Req/Sec    13.08k     1.13k   40.77k    85.26%
+  Latency Distribution
+     50%   24.11ms
+     75%   39.00ms
+     90%   53.58ms
+     99%   80.25ms
+  1563624 requests in 30.10s, 445.87MB read
+Requests/sec:  51948.21
+Transfer/sec:     14.81MB
+```
+
+<a name="node"></a>
 ### [node-express](http://expressjs.com/)
 
 ```
@@ -284,6 +293,7 @@ Requests/sec:  47429.61
 Transfer/sec:     10.40MB
 ```
 
+<a name="payra></a>
 ### [Payra-Micro](http://www.payara.fish/payara_micro)
 
 ```
@@ -303,6 +313,7 @@ Requests/sec:  61703.99
 Transfer/sec:      8.71MB
 ```
 
+<a name="play-java"></a>
 ### [Play-Java](http://playframework.com)
 
 ```
@@ -322,6 +333,7 @@ Requests/sec: 218074.28
 Transfer/sec:     26.83MB
 ```
 
+<a name="play-1"></a>
 ### [Playframework v1.4.x](http://playframework.com)
 
 ```
@@ -341,6 +353,7 @@ Requests/sec:  50176.54
 Transfer/sec:     21.44MB
 ```
 
+<a name="ratpack"></a>
 ### [RatPack](https://ratpack.io/)
 
 ```
@@ -361,6 +374,7 @@ Transfer/sec:     20.98MB
 ```
 
 
+<a name="spark></a>
 ### [Sparkframework](http://sparkjava.com/)
 
 ```
@@ -380,6 +394,7 @@ Requests/sec: 291954.47
 Transfer/sec:     49.28MB
 ```
 
+<a name="spring-reactor"></a>
 ### spring-boot-reactor
 
 ```
@@ -399,6 +414,7 @@ Requests/sec: 384186.78
 Transfer/sec:     28.21MB
 ```
 
+<a name="spring-undertow"></a>
 ### spring-boot-undertow (undertow embedded)
 
 ```
@@ -417,6 +433,7 @@ Requests/sec:  89433.13
 Transfer/sec:     12.96MB
 ```
 
+<a name="spring-tomcat"></a>
 ### spring-boot-tomcat (tomcat embedded)
 
 ```
@@ -436,6 +453,7 @@ Requests/sec:  68554.49
 Transfer/sec:      8.25MB
 ```
 
+<a name="swarm"></a>
 ### [WildFly Swarm](http://wildfly-swarm.io/)
 
 ```
