@@ -3,6 +3,8 @@
 
 **Disclaim:** This project is copied and adapted from https://github.com/networknt/light-java-example/tree/master/performance
 
+**Note:** As suggested by the project name, this is a benchmark that only show very limited aspect about framework performance: how framework respond with a simple plain text message. For real comprehensive view on framework performance, please refer to https://www.techempower.com/benchmarks
+
 ## Benchmark result:
 
 | Framework    | Max Throughput | Avg Latency | Transfer | 
