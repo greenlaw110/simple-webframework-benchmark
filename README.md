@@ -11,8 +11,8 @@
 | ------------ | -------------: | ----------: | -------: |
 | [Go-Fast-HTTP](#go-fast) | 1888432.99     | 0.94ms      | 226.92MB |
 | [Light Java](#light-java)   | 1678297.39     | 1.94ms      | 169.66MB |
+| [ActFramework](#act) | 761081.24      | 4.27ms      | 119.76MB  |
 | [Spring Boot Reactor](#spring-reactor) | 384186.78 | 4.17ms    | 28.21MB  |
-| [ActFramework](#act) | 352478.93      | 5.94ms      | 51.09MB  |
 | [Spark](#spark)        | 291954.47      |  11.14ms    | 49.28MB  |
 | [RatPack](#ratpack)      | 241775.80      |   8.44ms    | 20.87MB  |
 | [Go-HTTP](#go)      | 241484.14      |   7.02ms    | 29.71MB  |
@@ -64,20 +64,20 @@ For comprehensive webframework benchmark, one should refer to https://www.techem
 ### [ActFramework](http://actframework.org)
 
 ```
-luog@luog-Satellite-P50-A:~/p/tmp/light-java-example/performance$ wrk -t4 -c128 -d30s http://localhost:5460 -s pipeline.lua --latency -- / 16
-Running 30s test @ http://localhost:5460
-  4 threads and 128 connections
+luog@luog-Satellite-P50-A:~/p/greenlaw110/FrameworkBenchmarks/frameworks/Java/act$ wrk -t4 -c256 -d15s http://localhost:5460 -s pipeline.lua --latency -- / 16
+Running 15s test @ http://localhost:5460
+  4 threads and 256 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     5.94ms    7.51ms 124.38ms   87.51%
-    Req/Sec    88.59k     4.55k  101.28k    73.33%
+    Latency     4.27ms    4.79ms 211.96ms   93.75%
+    Req/Sec   191.84k    36.57k  323.23k    62.50%
   Latency Distribution
-     50%    3.20ms
-     75%    6.18ms
-     90%   15.81ms
-     99%   35.67ms
-  10578592 requests in 30.01s, 1.50GB read
-Requests/sec: 352478.93
-Transfer/sec:     51.09MB
+     50%    3.71ms
+     75%    5.72ms
+     90%    7.80ms
+     99%   13.46ms
+  11466144 requests in 15.07s, 1.76GB read
+Requests/sec: 761081.24
+Transfer/sec:    119.76MB
 ```
 
 <a name="akka"></a>

@@ -2,6 +2,7 @@ package demo;
 
 import act.Version;
 import act.boot.app.RunApp;
+import act.handler.NonBlock;
 import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.SessionFree;
 
@@ -15,13 +16,9 @@ import org.osgl.mvc.annotation.SessionFree;
 public class Example {
 
     @GetAction
+    @NonBlock
     @SessionFree
     public String home() {
-        return "Hello World!";
-    }
-
-    @GetAction("/hello")
-    public String helloWithSession() {
         return "Hello World!";
     }
 
